@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=0.75cm,arrowsize=2pt 3}
+\begin{pspicture}(-2.8,-2.4)(5,5.3)
+\psline[linestyle=dashed](3,0)(0,0)(0,3)
+\psline[linestyle=dashed](-1.3,-1.3)
+\psline[linewidth=1.25pt](3,0)(5,0)
+\psline[linewidth=1.25pt](0,3)(0,5.3)
+\psline[linewidth=1.25pt](-1.3,-1.3)(-2.8,-2.8)
+\psframe[linewidth=1.25pt](-1.3,-1.3)(1.7,1.7)
+\psline[linewidth=1.25pt](1.7,-1.3)(3,0)(3,3)(1.7,1.7)
+\psline[linewidth=1.25pt](3,3)(0,3)(-1.3,1.7)
+\uput[ur](0,0){A} \uput[dr](3,0){B} \uput[dr](1.7,-1.3){C} \uput[dr](-1.3,-1.3){D}
+\uput[ul](0,3){E} \uput[ur](3,3){F} \uput[ul](1.7,1.7){G} \uput[ul](-1.3,1.7){H}
+\uput[ul](-2.8,-2.8){$x$} \uput[u](5,0){$y$} \uput[r](0,5.3){$z$}
+\psdots(0,0)(3,0)(1.7,-1.3)(-1.3,-1.3)(0,3)(3,3)(1.7,1.7)(-1.3,1.7)(0.2,1.7)
+\uput[u](0.2,1.7){K}
+\end{pspicture}
+\end{center}
+\end{document}

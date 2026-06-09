@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\begin{pspicture}(-4,-2)(4,2.3)
+%\psgrid
+\psline(-4,-2)\psline(3.9,-0.7)\psline(0,2.3)
+\psline[linecolor=blue]{->}(-1.1,-0.55)\psline[linecolor=blue]{->}(1.7,-0.285)\psline[linecolor=blue]{->}(0,1.8)
+\pspolygon(-3.5,-1.73)(3.4,-0.6)(0,1.8)%ABC
+\psline(0,1.8)(1.55,-0.9)%CK
+\uput[ul](-3.5,-1.73){A} \uput[ur](3.4,-0.6){B} \uput[ul](0,1.8){C} \uput[d](0,0){O} \uput[dr](1.55,-0.9){K}
+\uput[u](-0.5,-0.3){\blue $\vect{\imath}$} \uput[u](0.6,-0.1){\blue $\vect{\jmath}$} \uput[l](0,0.8){\blue $\vect{k}$}
+\end{pspicture}
+\end{center}
+\end{document}

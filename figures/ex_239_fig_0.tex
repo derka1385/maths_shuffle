@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\begin{pspicture}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[unit=1cm,subgriddiv=1,gridlabels=0, gridcolor=lightgray](0,0)(11,5)
+\psaxes[arrowsize=3pt 3,ticksize=-2pt 0pt,Dx=0.1,Dy=0.1, labels=none]{->}(0,0)(0,0)(\xmax,\ymax)
+\uput[dl](0,0){O}
+\def\f{x -7 x mul 8 div 1 add mul}% définition de la fonction f
+\def\g{x -7 x mul 8 div 1 add x x ln mul 4 div sub mul}% définition de la fonction g
+\pscustom[fillstyle=hlines,hatchcolor=red]
+{\psplot[plotpoints=4000]{0.579}{1}{\g}
+\psplot[plotpoints=4000]{1}{0.579}{\f}
+\closepath
+}
+\psplot[plotpoints=4000,linecolor=blue]{0}{1}{\f} \uput[d](0.75,0.258){\blue $\mathcal{P}$}
+\psplot[plotpoints=4000]{0.01}{1}{\g} \uput[u](0.75,0.298){$\mathcal{C}_g$} 
+\psline[linestyle=dashed](1,0)(1,0.125) \uput[d](0.1,0){$0,1$} 
+\uput[d](1,0){$1$} \uput[l](0,0.1){$0,1$} 
+\psline[linestyle=dashed](0.579,0)(0.579,0.3315) \uput[d](0.578,0){$\dfrac{1}{\alpha}$}
+\end{pspicture}
+\end{center}
+\end{document}

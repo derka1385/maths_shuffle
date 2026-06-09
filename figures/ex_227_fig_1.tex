@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\begin{pspicture}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[subgriddiv=1,  gridlabels=0, gridcolor=gray, subgridcolor=lightgray] 
+\psline{->}(0,\ymin)(0,\ymax)
+\psline{->}(6,3)(-6,-3) \psline{->}(0,0)(\xmax,0)
+\psline[linewidth=2pt,showpoints](3.6,2)(-0.5,-5.5)
+\uput[u](3.6,2){\bf B} \uput[d](-0.5,-5.5){\bf C} 
+\psline[linewidth=2pt,showpoints](0,0)(7,0)
+\uput[ul](0,0){\bf O} \uput[u](7,0){\bf A} 
+{\psset{linecolor=blue,linestyle=dashed}
+\psline(0,0)(2.5,0)(3.6,0.55)(3.6,2)(1.1,2)(0,1.45)(0,0)(1.1,0.55)(1.1,2)
+\psline(0,1.45)(2.5,1.45)(2.5,0)
+\psline(3.6,2)(2.5,1.45) 
+\psline(1.1,0.55)(3.6,0.55)
+}
+{\psset{linecolor=red,linestyle=dashed}
+\psline(-3,-5.5)(-0.5,-5.5)(2.5,-4)(2.5,0)(0,0)(-3,-1.5)(-3,-5.5)(0,-4)(2.5,-4)
+\psline(2.5,0)(-0.5,-1.5)(-3,-1.5) \psline(-0.5,-5.5)(-0.5,-1.5)
+}
+\uput[-120](\xmin,-3){$x$} \uput[d](\xmax,0){$y$} \uput[l](0,\ymax){$z$}
+\uput[ul](-3,-1.5){87} \uput[ul](1.1,0.55){$-33$} 
+\uput[l](0,1.65){44} \uput[l](0,-4){$-116$} \uput[dr](2.5,0){75} 
+\end{pspicture}
+\end{center}
+\end{document}

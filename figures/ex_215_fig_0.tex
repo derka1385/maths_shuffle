@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\begin{pspicture}(-6,-1)(6,5)
+\pspolygon[linewidth=1.25pt,linecolor=blue,fillcolor=lightgray](3.922,-0.3)(3.922,1)(- 3.922,2.961)(-3.922,1.7)
+\psaxes[linewidth=1.25pt,Dx=10,Dy=10](0,0)(-6,-1)(6,5)
+\psaxes[linewidth=1.25pt,Dx=10,Dy=10]{->}(0,0)(1,1)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{-6}{6}{1 1 2.71828 x exp div add ln 0.25 x mul add}
+\psplotTangent[linewidth=1.25pt,linecolor=blue]{0}{6}{1 1 2.71828 x exp div add ln 0.25 x mul add}
+\psline[linestyle=dashed](-3.922,1.7)(-3.922,0)
+\uput[d](0.5,0){$\vect{\imath}$}\uput[l](0,0.5){$\vect{\jmath}$}
+\uput[d](3.922,-0.3){Q}\uput[u](3.922,1){M}\uput[ur](- 3.922,2.961){N}\uput[dl](-3.922,1.7){P}
+\uput[dr](3.922,0){$\alpha$}\uput[d](-3.922,0){$- \alpha$}\uput[dl](0,0){O}\uput[d](-5.2,2){$\Delta$}
+\uput[d](-5.2,3.8){\red $\mathcal{C}_f$}
+\end{pspicture}
+\end{center}
+\end{document}

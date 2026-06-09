@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=0.5cm,yunit=0.5cm,subgriddiv=1,gridlabels=0, gridcolor=lightgray](0,0)(24,16)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-2pt 2pt,Dx=100,Dy=50]{->}(0,0)(0,0)(\xmax,400)
+\def\f{20 1.65 x 2.7183 1 0.005 x mul sub exp mul mul add}% définition de la fonction
+\psplot[plotpoints=5000,linecolor=blue]{0}{\xmax}{\f}
+\uput[u](100,400){Température (en $\degres$\,C)}
+\uput[d](1050,-20){Temps (en min)}
+\end{pspicture*}
+\end{center}
+\end{document}

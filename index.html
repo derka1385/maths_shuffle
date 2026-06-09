@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maths Bac – Révision par notions</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- MathJax config (before loading the script) -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['\\[', '\\]']],
+        packages: {'[+]': ['ams']},
+        macros: {
+          R:    '\\mathbb{R}',
+          N:    '\\mathbb{N}',
+          D:    '\\mathbb{D}',
+          Z:    '\\mathbb{Z}',
+          Q:    '\\mathbb{Q}',
+          C:    '\\mathbb{C}',
+          vect: ['\\overrightarrow{\\,\\mathstrut#1\\,}', 1],
+          barre:['\\overline{\\,\\mathstrut#1\\,}', 1],
+          pg:   '\\geqslant',
+          pp:   '\\leqslant',
+          e:    '\\,\\mathrm{e}\\,',
+          d:    '\\,\\mathrm{d}',
+          Oij:  '\\left(\\mathrm{O}\\,;\\,\\vec{\\imath},\\,\\vec{\\jmath}\\right)',
+          Oijk: '\\left(\\mathrm{O}\\,;\\,\\vec{\\imath},\\,\\vec{\\jmath},\\,\\vec{k}\\right)',
+        }
+      },
+      options: {
+        skipHtmlTags: ['script','noscript','style','textarea','pre']
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- ════════════════════════════════════════════ HOME VIEW -->
+    <div id="home-view">
+      <header>
+        <h1>Maths Bac</h1>
+        <p class="subtitle">Sujets 2021 – 2025 · Clique sur une notion pour un exercice aléatoire</p>
+      </header>
+
+      <div class="tiles-grid">
+
+        <button class="tile fonctions" onclick="selectNotion('fonctions')">
+          <div class="tile-icon">𝑓(𝑥)</div>
+          <h2>Fonctions</h2>
+          <span class="tile-count" id="count-fonctions">…</span>
+        </button>
+
+        <button class="tile suites" onclick="selectNotion('suites')">
+          <div class="tile-icon">𝑢ₙ</div>
+          <h2>Suites</h2>
+          <span class="tile-count" id="count-suites">…</span>
+        </button>
+
+        <button class="tile geometrie" onclick="selectNotion('geometrie')">
+          <div class="tile-icon">△</div>
+          <h2>Géométrie</h2>
+          <span class="tile-count" id="count-geometrie">…</span>
+        </button>
+
+        <button class="tile probabilites" onclick="selectNotion('probabilites')">
+          <div class="tile-icon">𝑃</div>
+          <h2>Probabilités</h2>
+          <span class="tile-count" id="count-probabilites">…</span>
+        </button>
+
+      </div>
+
+      <footer>
+        <span id="total-count"></span>
+      </footer>
+    </div>
+
+    <!-- ════════════════════════════════════════════ EXERCISE VIEW -->
+    <div id="exercise-view" class="hidden">
+
+      <div class="exercise-toolbar">
+        <button class="btn-back" onclick="goHome()">← Retour</button>
+
+        <div class="meta-tags">
+          <span class="badge notion-badge" id="notion-badge"></span>
+          <span class="badge points-badge" id="points-badge"></span>
+        </div>
+
+        <button class="btn-shuffle" onclick="nextExercise()">
+          <span class="shuffle-icon">↺</span> Autre exercice
+        </button>
+      </div>
+
+      <div class="exercise-card">
+        <div class="exercise-card-header">
+          <div>
+            <div class="exam-name" id="exam-name"></div>
+            <div class="exercise-num" id="exercise-num"></div>
+          </div>
+          <div class="progress-text" id="progress-text"></div>
+        </div>
+
+        <div class="exercise-content" id="exercise-content"></div>
+      </div>
+
+      <div class="exercise-bottom-bar">
+        <button class="btn-shuffle large" onclick="nextExercise()">
+          <span class="shuffle-icon">↺</span> Autre exercice
+        </button>
+        <span class="counter-hint" id="counter-hint"></span>
+      </div>
+
+    </div>
+
+  </div><!-- .app -->
+
+  <script src="app.js"></script>
+</body>
+</html>

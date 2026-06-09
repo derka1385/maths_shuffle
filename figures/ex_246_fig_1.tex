@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[unit=0.8cm,subgriddiv=1,gridlabels=0, gridcolor=lightgray](-2,-1)(6,6)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-2pt 2pt,Dx=0.2,Dy=0.2]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psdots(0,1)(0.3,0.833)(1,0)(0.3,0)
+ \psline(0,1)(0.3,0.833)
+\psline[linestyle=dashed](0.3,0.833)(0.3,0)
+\uput[dl](0,0){O} \uput[ur](0,1){J} \uput[ur](1,0){I} 
+\uput[u](0.3,0.833){$M$} \uput[d](0.3,0){$x$}
+\def\f{x 2 add ln}% définition de la fonction g
+\psplot[plotpoints=4000,linecolor=blue]{\xmin}{\xmax}{\f}
+\uput[ul](-0.2,0.6){\blue $\mathcal{C}_g$}
+\end{pspicture*}
+\end{center}
+\end{document}

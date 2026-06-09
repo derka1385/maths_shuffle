@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{xunit=1cm,yunit=8cm,arrowsize=2pt 3}
+\begin{pspicture}(-1,-0.1)(6,0.5)
+\psaxes[linewidth=1.15pt,Dx=10,Dy=10]{->}(0,0)(-1,0)(6,0.5)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{0}{6}{x 2.71828 x exp div}
+\uput[u](4,0.073){\red $\mathcal{C}_f$}
+\psplotTangent{0.75}{1.25}{x 2.71828 x exp div}
+\uput[u](0.75,0.354){A}
+\psline[linestyle=dotted,linewidth=1.3pt](0.75,0)(0.75,0.354)
+\psline[linewidth=0.8pt]{->}(-0.3,0)(-0.3,0.265)
+\psline[linestyle=dotted,linewidth=1.3pt](0,0.265)(-0.3,0.265)
+\uput[l](-0.3,0.1325){$g(a)$}
+\uput[ul](0,0.265){H$_a$}
+\uput[d](0.75,0){$a$}\uput[u](2,0.4){$T_a$}
+\end{pspicture}
+\end{center}
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1cm,arrowsize=2pt 3}
+\begin{pspicture}(-1.8,-1.8)(5.4,3.8)
+\pspolygon[fillstyle=solid,fillcolor=lightgray](1.7,-0.6)(4.8,3)(0.4,0.4)
+\psaxes[linewidth=1.25pt,Dx=20,Dy=20]{->}(0,0)(0,0)(5.4,3.8)
+\psline[linewidth=1.25pt]{->}(0,0)(-1.8,-1.8)
+\multido{\n=0+-0.3}{7}{\psdots[dotstyle=+,dotangle=45](\n,\n)}
+\multido{\n=0+0.6}{9}{\psline(\n,-0.05)(\n,0.05)}
+\multido{\n=0+0.5}{8}{\psline(-0.05,\n)(0.05,\n)}
+\psline[linestyle=dashed](4.8,0)(4.8,3)(0,3)
+\psframe[linestyle=dashed](-1.8,-1.8)(0.4,0.4)
+\psframe[linestyle=dashed](2.4,2)
+\psline[linestyle=dashed](-1.8,0.4)(0,2)
+\psline[linestyle=dashed](0.4,-1.8)(2.4,0)
+\psline[linestyle=dashed](0.4,0.4)(2.4,2)
+\psline[linestyle=dashed](-0.6,-0.6)(1.8,-0.6)
+\uput[d](0,0){\small O} \uput[ul](-0.15,-0.2){\footnotesize $\vect{\imath}$}
+\uput[d](0.3,0){\footnotesize $\vect{\jmath}$}
+\uput[l](0,0.3){\footnotesize $\vect{k}$}
+\uput[l](-1.8,-1.8){$x$}\uput[d](5.3,0){$y$}\uput[l](0,3.7){$z$}
+
+\uput[ur](4.8,3){A} \uput[ul](0.4,0.4){B} \uput[dr](1.7,-0.6){C}
+\end{pspicture}
+\end{center}
+\end{document}

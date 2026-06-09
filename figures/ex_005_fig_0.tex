@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1.25cm}
+\begin{pspicture*}(-0.5,-0.8)(6.4,4.4)
+\psgrid[gridlabels=0pt,subgriddiv=5,gridcolor=gray](0,-1)(9,5)
+\psaxes[linewidth=1.25pt]{->}(0,0)(0,-0.8)(6.4,4.4)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{0.1}{6.4}{x ln 1 add 4 mul x div}
+\psline[linewidth=1.25pt](0,4)(6.4,4)\uput[u](5.8,4){$T$}
+\uput[u](5.8,1.9){\red $\mathcal{C}_f$}
+\uput[u](1,4){A}
+\end{pspicture*}
+\end{center}
+\end{document}

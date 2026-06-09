@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1cm}
+\begin{pspicture*}(-0.6,-2)(7,6)
+\psgrid[gridlabels=0,subgriddiv=1,gridwidth=0.06pt]
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle](0,0)(0,-2)(6.9,5.9)
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle]{->}(0,0)(1,1)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{0.01}{7}{x ln x mul x sub}
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{0.01}{7}{x ln}
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red,linestyle=dashed]{0.01}{7}{1.833 x mul 6.254 sub}
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue,linestyle=dashed]{0.01}{7}{0.162 x mul 0.833 add}
+\uput[u](1,1){\blue $D_a$}\uput[r](2.9,-1){\red $T_a$}\uput[l](4.3,2){\red $\mathcal{C}_f$ }
+\uput[r](0.2,-1.8){\blue $\mathcal{C}_g$}
+%\psplotTangent[linecolor=red]{6.25}{4cm}{x ln}
+%\psplotTangent[linecolor=blue]{6.25}{4cm}{1 x div}
+\psline[linestyle=dotted,linewidth=1.25pt](6.25,0)(6.25,5.204)
+\uput[d](6.25,0){$a$}
+\end{pspicture*}
+\end{center}
+\end{document}

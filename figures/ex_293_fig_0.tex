@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=10cm,arrowsize=2pt 3,comma=true}
+\begin{pspicture*}(-0.1,-0.09)(1.05,1.1)
+\psgrid[unit=1cm,subgriddiv=1,gridlabels=0, gridcolor=lightgray](-1,-1)(11,11)
+\psaxes[linewidth=1.25pt,Dx=0.1,Dy=0.1]{->}(0,0)(0,0)(1.05,1.1)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{0}{1}{2.71828 x neg exp}\uput[u](0.75,0.47){\red $\mathcal{C}_0$}
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{0}{1}{2.71828 x neg exp x mul}\uput[u](0.75,0.35){\blue $\mathcal{C}_1$}
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=gray]{0}{1}{2.71828 x neg exp x  dup mul mul}\uput[u](0.75,0.27){\gray $\mathcal{C}_2$}
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=magenta]{0}{1}{2.71828 x neg exp x 10 exp mul}\uput[u](0.75,0.06){\magenta $\mathcal{C}_{10}$}
+\psplot[plotpoints=3000,linewidth=1.25pt,linecolor=green]{0}{1}{2.71828 x neg exp x 100 exp mul}\uput[u](0.92,0.02){\green $\mathcal{C}_{100}$}
+\end{pspicture*}
+\end{center}
+\end{document}

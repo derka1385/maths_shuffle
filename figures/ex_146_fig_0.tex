@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+%\psset{unit=1cm,arrowsize=2pt 3}
+%%\newrgbcolor{ccqqqq}{0.8 0. 0.}
+%\newrgbcolor{ffvvqq}{1. 0.3333333333333333 0.}
+\psset{xunit=1.5cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2.pt,arrowsize=2pt 3}
+\begin{pspicture*}(-0.5,-4.05)(8,5.2)
+\psgrid[gridlabels=0pt,subgriddiv=1,gridwidth=0.2pt](0,-4)(8,5)
+\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,,ticksize=-2pt 0,subticks=2]{->}(0,0)(0,-3.95)(8,5)
+\psline[linewidth=4.pt](-3.320081944682136,4.772338854767012)(-1.5600159659972166,4.772338854767012)
+\psplot[linewidth=1.25pt,linecolor=red,plotpoints=2000]{0}{8}{4.0/(1.0+2.718281828^(-3.0*x+12.0))}\uput[r](5,3.6){\red $\mathcal{C}_2$}
+\psplot[linewidth=1.25pt,linecolor=blue,plotpoints=2000]{0}{8}{4.0*3.0*2.71828^(-3.0*x+12.0)/(2.0*2.71828^(-3.0*x+12.0)+(2.71828^(-3.0*x+12.0))^(2.0)+1.0)}\uput[r](5,0.6){\blue $\mathcal{C}_3$}
+\psplot[linewidth=1.25pt,plotpoints=2000]{0}{8}{(-4.0*3.0^(2.0)*2.71828^(-3.0*x+12.0)+4.0*3.0^(2.0)*(2.71828^(-3.0*x+12.0))^(2.0))/(3.0*2.71828^(-3.0*x+12.0)+(2.71828^(-3.0*x+12.0))^(3.0)+3.0*(2.71828^(-3.0*x+12.0))^(2.0)+1.0)}\uput[r](5,-1.6){$\mathcal{C}_1$}
+%\begin{scriptsize}
+%\psdots[dotstyle=*](-2.79206215107666,4.772338854767012)
+%\rput[bl](-2.8888657799043305,5.068528903353232){$a = 3$}
+%\end{scriptsize}
+\end{pspicture*}
+\end{center}
+\end{document}

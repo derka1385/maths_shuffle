@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1cm,arrowsize=2pt 3}
+\begin{pspicture*}(-4,-3)(2,6)
+\psaxes[linewidth=1.25pt,Dx=10,Dy=10]{->}(0,0)(-4,-3)(2,6)
+\psaxes[linewidth=1.25pt](0,0)(1,1)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{-4}{2}{x 2 add 1 x  sub mul 2.71828 x 0.5 mul exp mul}\uput[dr](-4,-1.5){\blue $\mathcal{C}'$}
+\psline(-4,0.1)(-4,-0.1)
+\uput[dr](-2,0){A} \uput[ur](1,0){B} \uput[l](0,5){C} 
+\psplot[plotpoints=2000,linewidth=1.25pt]{-4}{2}{5 5 x  mul sub}
+\uput[d](-4,0){$-4$}
+\end{pspicture*}
+\end{center}
+\end{document}

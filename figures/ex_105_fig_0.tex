@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+
+%%% grille 1cm x 1cm
+\psgrid[unit=1cm,gridlabels=0,subgriddiv=1,gridcolor=gray](0,0)(1,1)
+%%% axes
+\psaxes[linewidth=1.5pt,Dx=0.1,Dy=0.1,labelFontSize=\scriptstyle]{->}(0,0)(0,0)(\xmax,\ymax)
+%%% origine
+\uput[dl](0,0){O}
+%%% définition de la fonction
+\def\f{1.9 x mul  1 x sub mul}
+%%% tracé de la représentation graphique de la fonction
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{0}{1}{\f}
+%%%% nom de la courbe
+\uput[10](0.8,0.3){\blue $\mathscr{C}_f$}
+%%% droite d'équation y = x
+\psplot[plotpoints=1000,linecolor=red!80]{0}{1}{x}
+\uput[d]{45}(0.65,0.65){\red $D : y=x$}
+%%% \pstfixpoint[options]{abscisse début}{fonction}{nb itérations}
+\psFixpoint[linecolor=red,ArrowInside=-<]{0.1}{\f}{3}
+\psline[linestyle=dashed](0.1,0.171)(0,0.171)\uput[l](0,0.171){\small $u_1 = f\left(u_0\right)$}
+\uput[d](0.1,-0.075){\small $u_0$}
+\psline[linestyle=dashed](0.171,0.171)(0.171,0)\uput[d](0.171,-0.075){\small $u_1$}
+\psline[linestyle=dashed](0.269,0.269)(0.269,0)\uput[d](0.269,-0.075){\small $u_2$}
+\psline[linestyle=dashed](0.374,0.374)(0.374,0)\uput[d](0.374,-0.075){\small $u_3$}
+\psline[linecolor=red](0.374,0.374)(0.374,0.445)
+\end{pspicture*}
+\end{center}
+\end{document}

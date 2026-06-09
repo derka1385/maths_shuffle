@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1cm,arrowsize=2pt 4}
+\begin{pspicture}(6,10)
+\pspolygon(0.5,0.5)(4,0)(4,7.2)(0.5,7.7)%BCGF
+\uput[d](0.5,0.5){B} \uput[d](4,0){C} \uput[ul](4,7.2){G} \uput[ul](0.5,7.7){F} 
+\psline(4,0)(5,1.4)(5,8.6)(4,7.2)%CDHG
+\uput[r](5,1.4){D} \uput[ur](5,8.6){H} \uput[d](1.5,1.9){A} \uput[dr](4.5,0.7){K}\uput[l](1.5,5.5){I}
+\uput[r](5,7.3){L}
+\psline(5,8.6)(1.5,9.1)(0.5,7.7)%HEF
+\uput[u](1.5,9.1){E}
+\psline[linestyle=dashed]{->}(1.5,1.9)(1.5,5.5)%AI
+\psline[linestyle=dashed]{->}(1.5,1.9)(0.5,0.5)%AB
+\psline[linestyle=dashed]{->}(1.5,1.9)(5,1.4)%AD
+\psline[linestyle=dashed](4.5,0.7)(1.5,1.9)(5,7.3)%KAL
+\psline[linestyle=dashed](1.5,5.5)(1.5,9.1)
+\psline(4.5,0.7)(5,7.3)
+\end{pspicture}
+\end{center}
+\end{document}

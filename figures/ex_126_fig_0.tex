@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1cm,arrowsize=2pt 3}
+\begin{pspicture}(12.2,6)
+\pspolygon(0.4,3.4)(0.4,1.5)(1.9,0.4)(1.9,2.3)%HDAE
+\psline(1.9,0.4)(7.9,0.8)(7.9,2.7)(1.9,2.3)%ABFE
+\psline[linestyle=dashed](0.4,1.5)(6.4,1.9)(6.4,3.8)(0.4,3.4)%DCGH
+\psline[linestyle=dashed](7.9,0.8)(6.4,1.9)%BC
+\pspolygon(7.9,2.7)(6.4,3.8)(3.4,5.5)(4.9,4.4)%FGJI
+\psline(4.9,4.4)(1.9,2.3)%IE
+\psline(3.4,5.5)(0.4,3.4)%JH
+\psline[linewidth=1.5pt]{->}(1.9,0.4)(3.9,0.533)
+\psline[linewidth=1.5pt]{->}(1.9,0.4)(1.15,0.95)
+\psline[linewidth=1.5pt]{->}(1.9,0.4)(1.9,2.3)
+\psline(11.6,0.3)(7.9,1.2)
+\psline[linestyle=dashed](7.9,1.2)(7.15,1.35)
+\uput[d](1.9,0.4){A} \uput[dr](7.9,0.8){B} \uput[r](6.4,1.9){C} \uput[l](0.4,1.5){D}
+\uput[u](1.9,2.3){E} \uput[r](7.9,2.7){F} \uput[ur](6.4,3.8){G} \uput[ul](0.4,3.4){H}
+\uput[l](4.9,4.4){I} \uput[u](3.4,5.5){J} \uput[r](11.6,0.3){R} \uput[dl](1.7,0.6){$\vect{\jmath}$}
+\uput[dr](2.9,0.45){$\vect{\imath}$} \uput[r](1.9,1.35){$\vect{k}$}
+\psdots(11.6,0.3)
+\end{pspicture}
+\end{center}
+\end{document}

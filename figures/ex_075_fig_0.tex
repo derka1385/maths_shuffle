@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1cm,arrowsize=2pt 3}
+\begin{pspicture}(6.5,2)
+\psframe(6.5,2)\psline(0,1.5)(6.5,1.5)\psline(1.5,0)(1.5,2)
+\uput[u](0.75,1.4){$x$} \uput[u](1.6,1.4){$0$} \uput[u](4,1.4){$6,85$} \uput[u](6,1.4){$+ \infty$} 
+\rput(0.75,0.75){$f(x)$}\uput[u](1.65,0){$0$}\uput[d](4,1.5){$f(6,85)$}\uput[u](6,0){$- \infty$}
+\psline{->}(1.75,0.25)(3.4,1.25)\psline{->}(4.6,1.25)(5.9,0.35)
+\end{pspicture}
+\end{center}
+\end{document}

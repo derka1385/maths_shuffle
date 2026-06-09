@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=0.05cm,yunit=0.02cm,arrowsize =2pt 3}
+\begin{pspicture}(-20,-15)(220,230)
+\multido{\n=0+20}{11}{\psline[linewidth=0.2pt](\n,0)(\n,230)}
+\multido{\n=0+50}{5}{\psline[linewidth=0.2pt](0,\n)(220,\n)}
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle,Dx=20,Dy=50]{->}(0,0)(0,0)(220,230)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{0}{220}{180 2.71828 0.02 x mul exp div 30 add}
+\uput[u](190,0){temps (en s)}\uput[r](0,220){température (en \degres C)}
+\end{pspicture}
+\end{center}
+\end{document}

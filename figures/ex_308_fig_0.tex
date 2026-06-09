@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1.6cm,arrowsize=2pt 3}
+\begin{pspicture*}(-0.4,-0.6)(7.6,2.4)
+\psgrid[unit=0.8cm,gridlabels=0pt,gridcolor=gray!50,subgridcolor=lightgray!50](-1,-2)(16,5)
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle]{->}(0,0)(-0.4,-0.6)(7.6,2.4)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{0}{7.5}{5 x mul 2.71828 x exp div}
+\uput[d](6.8,-.2){\footnotesize temps en heures}
+\uput[r](0,2.2){\footnotesize concentration en g/L}
+%%%
+%\psset{linecolor=red,linestyle=dashed,linewidth=1.2pt}
+%\psline(0,1)(7.5,1)
+%\psline(0.25,0)(0.25,1) \psline(2.5,0)(2.5,1)
+%\psline[linestyle=solid,linewidth=2pt]{[-]}(0.25,0)(2.5,0)
+%\psline[linecolor=blue](1,0)(1,1.84)% maximum
+\end{pspicture*}
+\end{center}
+\end{document}

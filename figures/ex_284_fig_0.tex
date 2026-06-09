@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{xunit=1cm,yunit=0.1cm,arrowsize=2pt 3}
+\begin{pspicture}(-1,-5)(10,73)
+\multido{\n=0+1}{11}{\psline[linewidth=0.15pt](\n,0)(\n,70)}
+\multido{\n=0+10}{8}{\psline[linewidth=0.15pt](0,\n,)(10,\n)}
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle,Dy=10]{->}(0,0)(0,0)(10,70)
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle,Dy=10](0,0)(0,0)(10,70)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{0}{10}{60 x mul 40 add 2.71828 0.5 x mul exp div}
+\uput[u](9.5,0){$t$ (min)}\uput[r](0,71){$\degres$ C}
+\end{pspicture}
+\end{center}
+\end{document}

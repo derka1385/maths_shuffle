@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=0.75cm}
+\begin{pspicture*}(-0.5,-5)(10,1)
+\psgrid[gridlabels=0pt,subgriddiv=1,gridwidth=0.25pt](-0.5,-5)(10,1)
+\psaxes[linewidth=1.25pt,Dx=11,Dy=11](0,0)(-0.5,-5)(10,1)
+%\psecurve[linewidth=1.25pt,linecolor=blue](-0.3,-6)(-0.2,-5)(0,-4)(1,-1.2)(2,0)(3,0.45)(4,0.5)(5,0.45)(6,0.4)(10,0.1)(11,0.08)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{-0.3}{11}{x 2 sub 2 mul 2.71828 x 2 div exp div}
+\uput[d](1,0){\footnotesize 1}\uput[d](2,0){\footnotesize 2}\uput[dl](0,0){\footnotesize 0}\uput[d](0,1){\footnotesize 1}
+\uput[r](0.4,-3.5){\blue$\mathcal{C}_{f'}$}
+\end{pspicture*}
+\end{center}
+\end{document}

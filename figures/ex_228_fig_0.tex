@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{xunit=2cm,arrowsize=2pt 3,comma}
+\begin{pspicture}(-0.5,-5.5)(5.5,5.5)
+\multido{\n=0.0+0.5}{12}{\psline[linewidth=0.2pt,linecolor=gray](\n,-5.5)(\n,5.5)}
+\multido{\n=0.0+0.1}{56}{\psline[linewidth=0.1pt,linecolor=lightgray](\n,-5.5)(\n,5.5)}
+\multido{\n=-5+1}{11}{\psline[linewidth=0.2pt,linecolor=gray](0,\n)(5.5,\n)}
+\multido{\n=-5.4+0.2}{55}{\psline[linewidth=0.1pt,linecolor=lightgray](0,\n)(5.5,\n)}
+\psaxes[linewidth=1.25pt,Dx=0.5]{->}(0,0)(0,-5.5)(5.5,5.5)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{0}{5.5}{4 x mul 2 sub 2.71828 x 1 sub exp div}
+\psplotTangent{2.5}{2.5}{4 x mul 2 sub 2.71828 x 1 sub exp div}
+\uput[r](0.25,-3){\blue $\mathcal{C}$}\uput[u](0.25,3.8){$T$}
+\psdots[dotstyle=+,dotscale=2.2](2.5,1.785)\uput[ur](2.5,1.785){A}
+\end{pspicture}
+\end{center}
+\end{document}

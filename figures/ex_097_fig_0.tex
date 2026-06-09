@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1cm}
+\begin{pspicture}(7.2,6.9)
+\psframe(0.2,0.2)(5.2,5.2)%ABFE
+\psline(5.2,0.2)(6.8,1.5)(6.8,6.5)(5.2,5.2)%BCGF
+\psline(6.8,6.5)(1.8,6.5)(0.2,5.2)%GHE
+\psline[linestyle=dashed](0.2,0.2)(1.8,1.5)(6.8,1.5)%ADC
+\psline[linestyle=dashed](1.8,1.5)(1.8,6.5)%DH
+\uput[dl](0.2,0.2){A} \uput[dr](5.2,0.2){B} \uput[r](6.8,1.5){C} \uput[l](1.8,1.5){D}
+\uput[l](0.2,5.2){E} \uput[r](5.2,5.2){F} \uput[ur](6.8,6.5){G} \uput[ul](1.8,6.5){H}
+\end{pspicture}
+\end{center}
+\end{document}

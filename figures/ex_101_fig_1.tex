@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=0.75cm}
+\begin{pspicture}(-4,-1.95)(4.25,4.1)
+%\psgrid
+\def\tobo{\psplot[plotpoints=2000,linewidth=1.25pt]{-3}{4}{2.71828 x exp x dup mul 1 add div}}
+\psplot[plotpoints=2000,linewidth=1.25pt]{-3}{4}{2.71828 x exp x dup mul 1 add div}
+\rput(-0.6,0.6){\tobo}
+\psline(-3,0)(-3.6,0.6)\psline(4,3.2)(3.4,3.8)
+\pscustom[fillstyle=solid,fillcolor=lightgray]
+{\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=red]{-3}{4}{2.71828 x exp x dup mul 1 add div}
+\psline(4,3.2)(4,0)(-2,0)}
+\rput(0,-1){Vue de profil du toboggan}
+\end{pspicture}
+\end{center}
+\end{document}

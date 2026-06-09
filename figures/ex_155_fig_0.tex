@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=2.25cm,yunit=2.25cm,arrowsize=2pt 3}
+\begin{pspicture*}(-3,-0.8)(2.4,2.6)
+\psaxes[linewidth=1.25pt,Dx=10,Dy=10]{->}(0,0)(-3,-0.8)(2.4,2.6)
+\psaxes[linewidth=1.25pt](0,0)(1,1)
+\psplot[plotpoints=2000,linecolor=red,linewidth=1.25pt]{-3}{2.4}{2.71828 x neg exp 1 add ln}
+\psplotTangent[linestyle=dashed]{0}{4}{2.71828 x neg exp 1 add ln}
+\psline[linestyle=dashed](-3,2.7)(3.4,-0.45)
+\psdots(-2.2,2.3)(2.3,0.1)
+\uput[u](-2.2,2.3){$M_a$}\uput[u](2.3,0.1){$N_a$}
+\uput[dl](-1.6,1.8){\red $\mathcal{C}$}\uput[d](2.3,-0.43){$T_0$}
+\end{pspicture*}
+\end{center}
+\end{document}

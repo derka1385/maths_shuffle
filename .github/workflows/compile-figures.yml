@@ -1,0 +1,77 @@
+name: Compile LaTeX Figures
+
+on:
+  push:
+    paths:
+      - 'figures/**.tex'
+      - '.github/workflows/compile-figures.yml'
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX + PSTricks + dvipng
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-pstricks \
+            texlive-science \
+            texlive-fonts-recommended \
+            dvipng
+
+      - name: Compile all .tex figures to PNG
+        run: |
+          cd figures
+          COMPILED=0
+          FAILED=0
+          for tex in *.tex; do
+            base="${tex%.tex}"
+            png="${base}.png"
+            # Skip if PNG already newer than tex
+            if [ -f "$png" ] && [ "$png" -nt "$tex" ]; then
+              continue
+            fi
+            echo -n "  Compiling $base … "
+            TMPDIR=$(mktemp -d)
+            cp "$tex" "$TMPDIR/${base}.tex"
+            if latex -halt-on-error -interaction=nonstopmode \
+                     -output-directory="$TMPDIR" "$TMPDIR/${base}.tex" \
+                     > "$TMPDIR/${base}.log" 2>&1; then
+              if dvipng -D 150 -T tight -bg Transparent \
+                        -o "$png" "$TMPDIR/${base}.dvi" \
+                        >> "$TMPDIR/${base}.log" 2>&1; then
+                echo "✓"
+                COMPILED=$((COMPILED + 1))
+              else
+                echo "⚠ dvipng failed"
+                FAILED=$((FAILED + 1))
+              fi
+            else
+              echo "⚠ latex failed"
+              cat "$TMPDIR/${base}.log" | tail -20
+              FAILED=$((FAILED + 1))
+            fi
+            rm -rf "$TMPDIR"
+          done
+          echo ""
+          echo "Compiled: $COMPILED  Failed: $FAILED"
+          echo "PNG files: $(ls *.png 2>/dev/null | wc -l)"
+
+      - name: Commit compiled PNGs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add figures/*.png
+          if git diff --cached --quiet; then
+            echo "No new PNG files to commit."
+          else
+            git commit -m "chore: compile LaTeX figures to PNG"
+            git push
+          fi

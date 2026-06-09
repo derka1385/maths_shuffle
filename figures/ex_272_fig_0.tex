@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+%\begin{tikzpicture}%compiler avec pgfplots
+%\begin{axis}[/pgf/number format/.cd, use comma,
+%x={15mm}, y={6mm}, %échelle originale : x=20mm
+%xmin=-3, xmax=5, ymin = -8, ymax= 7, %limites du graphique
+%xtick = {-2,...,4}, ytick={-7,...,6},
+%tick label style={font=\footnotesize},
+%minor tick num = 0, grid=major, axis lines =center]
+%\node[below left] at (axis cs: 0,0) {{\footnotesize 0}};
+%\addplot [line width=1.2pt, color=red, smooth, samples=300, domain= -3:5]{(x^2+3*x+1)*exp(-x)};
+%\node[red] at(axis cs: 2.2,2) {$ \mathcal{C}_1 $};
+%\addplot [line width=1.2pt, color=blue, dashed, smooth, samples=300, domain= -3:5]{(-x^2-x+2)*exp(-x)};
+%\node[blue] at(axis cs: 2.2,-1.1) {$ \mathcal{C}_2 $};
+%\end{axis}
+%\end{tikzpicture}
+
+%Version en pstricks:
+\psset{xunit=1.5cm,yunit=0.6cm} %sur le sujet original : xunit=2cm
+\begin{pspicture*}(-3.,-8.)(5.,7.)
+% Configuration de la grille et des axes
+\psgrid[gridlabels=0pt,subgriddiv=0,gridcolor=lightgray,gridwidth=0.25pt](0,0)(-3,-8)(5,7)
+%Axes
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle,ticks=xy]{->}(0,0)(-2.99,-7.99)(5,7)
+\uput[-135](0,0){\footnotesize 0}
+% Courbe C1 : (x^2+3*x+1)*exp(-x)
+\psplot[linewidth=1.2pt,linecolor=red,plotpoints=2000]{-3}{5}{x dup mul 3 x mul add 1 add 2.71828 x neg exp mul}
+\uput[0](2.2,2){\red $\mathcal{C}_1$}
+% Courbe C2 : (-x^2-x+2)*exp(-x)
+\psplot[linewidth=1.2pt,linecolor=blue,linestyle=dashed,plotpoints=2000]{-3}{5}{x dup mul neg x sub 2 add 2.71828 x neg exp mul}
+\uput[0](2.2,-1.1){\blue $\mathcal{C}_2$}
+\end{pspicture*}
+\end{center}
+\end{document}

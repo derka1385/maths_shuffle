@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{pst-all,pst-func,pst-3dplot,pst-eucl}
+\usepackage{multido,color}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\newcommand{\barre}[1]{\overline{\,\mathstrut#1\,}}
+\newcommand{\pg}{\geqslant}
+\newcommand{\pp}{\leqslant}
+\newcommand{\e}{\,\text{e}\,}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Cg}{\texttt{]}}
+\newcommand{\Cd}{\texttt{[}}
+\def\Oij{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}\,;\,\vec{\imath},\,\vec{\jmath},\,\vec{k}\right)$}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\psset{unit=1cm,arrowsize=2pt 3}
+\begin{pspicture*}(-0.5,-1)(8.5,10)
+\psframe[linewidth=1.25pt,fillcolor=lightgray,fillstyle=solid](6.8,3.438)
+\psframe[fillcolor=gray,fillstyle=solid](6.8,0)(6.6,0.2)
+\psframe[fillcolor=gray,fillstyle=solid](0,3.438)(0.2,3.238)
+\uput[dl](0,0){O}\uput[l](0,3.438){$P$}\uput[ur](6.8,3.438){$M$}\uput[d](6.8,0){$N$}
+\psgrid[subgriddiv=5,gridcolor=lightgray,subgridcolor=lightgray!50,gridlabels=0](0,0)(9,10)
+\psplot[plotpoints=2000,linewidth=1.25pt,linecolor=blue]{3}{8}{7 x mul 9 add x dup mul sub ln 10 mul x div}
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle,showorigin=false](0,0)(8.5,9.99)
+\psaxes[linewidth=1.25pt,labelFontSize=\scriptstyle,labels=none]{->}(1,1)
+\uput[d](0.5,0){\small $\vect{\imath}$}
+\uput[l](0,0.5){\small $\vect{\jmath}$}
+\uput[ur](4,7.6){\blue $(\mathcal{C}_f)$}
+\end{pspicture*}
+\end{center}
+\end{document}
